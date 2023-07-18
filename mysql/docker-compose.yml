@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  mySQL:
+    image: mysql:latest
+    restart: always
+    container_name: xarketing
+    environment:
+      MYSQL_ROOT_PASSWORD: Patata1234
+      MYSQL_DATABASE: xarketing
+    ports:
+      - 3306:3306
+    volumes:
+      - ./sql/init.sql:/docker-entrypoint-initdb.d/init.sql
